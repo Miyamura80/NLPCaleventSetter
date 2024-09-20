@@ -1,5 +1,6 @@
 # Ignore the credentials.json file
 credentials.json
+token.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
