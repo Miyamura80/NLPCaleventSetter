@@ -1,3 +1,6 @@
 model-name: gpt-4o
-example_parent:
-  example_child: example_value
+google_calendar:
+  scopes:
+    - https://www.googleapis.com/auth/calendar
+  credentials_file: 'credentials.json'
+  token_file: 'token.json'
