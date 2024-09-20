@@ -1,26 +1,26 @@
 {
-    "manifest_version": 3,
-    "name": "Natural Language Calendar Booker",
-    "version": "1.0",
-    "description": "Book calendar events using natural language",
-    "permissions": ["identity", "storage"],
-    "identity": {
-      "oauth2": true
-    },
-    "action": {
-      "default_popup": "popup.html"
-    },
-    "background": {
-      "service_worker": "background.js"
-    },
-    "host_permissions": [
-      "https://www.googleapis.com/*"
-    ],
-    "key": "loadfhjfcbldfiliejgdlpjcoacojggm",
-    "oauth2": {
-      "client_id": "1038098554615-fhktp5kg5epv9r8usljk6o8upq48b1o9.apps.googleusercontent.com",
-      "scopes": [
-        "https://www.googleapis.com/auth/calendar.events"
-      ]
-    }
+  "manifest_version": 3,
+  "name": "Natural Language Calendar Booker",
+  "version": "1.0",
+  "description": "Book calendar events using natural language",
+  "permissions": [
+    "identity",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://www.googleapis.com/*"
+  ],
+  "key": "cdniogjoigkegepghdcciglealldfcoi",
+  "oauth2": {
+    "client_id": "1038098554615-fhktp5kg5epv9r8usljk6o8upq48b1o9.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/calendar.events"
+    ]
   }
+}
