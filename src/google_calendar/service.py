@@ -5,6 +5,7 @@ from googleapiclient.discovery import build
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 
+
 def get_calendar_service():
     creds = None
     scopes = global_config.google_calendar.scopes
@@ -19,8 +20,8 @@ def get_calendar_service():
         else:
             flow = InstalledAppFlow.from_client_secrets_file(credentials_file, scopes)
             creds = flow.run_local_server(port=0)
-        with open(token_file, 'w') as token:
+        with open(token_file, "w") as token:
             token.write(creds.to_json())
 
-    service = build('calendar', 'v3', credentials=creds)
+    service = build("calendar", "v3", credentials=creds)
     return service
