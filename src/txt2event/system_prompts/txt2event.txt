@@ -13,9 +13,10 @@ Then, after the planning, you should respond in YAML format as described below:
 
 ```yaml
 summary: summary
-start: start-datetime
-end: end-datetime
-timeZone: timeZone
+start_time: start-datetime
+end_time: end-datetime
+time_zone: timeZone
+location: location
 emailInvites:
   - email1@domain1.com
   - email2@domain2.com
@@ -30,5 +31,6 @@ Rules:
 - The times should be in the format "YYYY-MM-DDTHH:MM:SS".
 - Ensure the response can be parsed by Python `yaml.safe_load`
 - If the user does not specify any email invites, you should not include the emailInvites field in the response.
+- If the user does not specify a location, you should not include locationfield in the response.
 - If the event is a 1-1 meeting, you should name the event "Person's Name <> Eito"
 

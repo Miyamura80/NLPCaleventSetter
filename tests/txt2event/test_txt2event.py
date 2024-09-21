@@ -13,19 +13,9 @@ class TestTxt2Event(TestCaseClass):
         self.txt2event = Text2Event(self.config)
 
     @ci_test
-    def test_extract_event_yaml(self):
-        test_str = """Plan:
-1) 
-
-Code:
-```yaml
-
-```"""
-
-    @ci_test
-    def test_process_txt_to_event(self):
+    def test_run(self):
         test_str = """> Hardi:
-Would Wed 4PM work?
+Would Mon 4PM work?
 
 > Eito Miyamura ♨️:
 Sounds good! Whats your email?
@@ -37,9 +27,29 @@ And what area of London will you be around?
 hardi@gatlingx.com
 I am in Shordetich but on Wed I will be coming from Dulwitch by train so near Victoria could work or maybe start 5PM and do near Shorditch
 """
-        response = self.txt2event.process_txt_to_event(test_str)
+        self.txt2event.run(test_str)
+
+    def test_process_txt_to_event(self):
+        test_str = """> Hardi:
+Would Mon 4PM work?
+
+> Eito Miyamura ♨️:
+Sounds good! Whats your email?
+
+> Eito Miyamura ♨️:
+And what area of London will you be around?
+
+> Hardi:
+hardi@gatlingx.com
+I am in Shordetich but on Wed I will be coming from Dulwitch by train so near Victoria could work or maybe start 5PM and do near Shorditch
+"""
+        response = self.txt2event.process_txt_llm(test_str)
         print(response)
         self.assertIsNotNone(response)
+
+        extracted_dict = self.txt2event.extract_event_yaml(response.content)
+        print(extracted_dict)
+        self.assertIsNotNone(extracted_dict)
 
 
 if __name__ == "__main__":
