@@ -27,9 +27,7 @@ class Text2Event:
         return [match.strip() for match in matches]
 
     def process_txt_to_event(self, text):
-        system_prompt = load_prompt(
-            "src/txt2event/system_prompts/txt2event.txt"
-        )
+        system_prompt = load_prompt("src/txt2event/system_prompts/txt2event.txt")
 
         today_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
