@@ -1,6 +1,7 @@
 from typing import Any, Dict, List
-from deps.ChatRouter.utils import ChatRouter
+from deps.ChatRouter.utils import ChatRouter, load_prompt
 from global_config.global_config import global_config
+import datetime
 
 import re
 
@@ -25,10 +26,19 @@ class Text2Event:
         matches = re.findall(pattern, content, re.DOTALL)
         return [match.strip() for match in matches]
 
-    def process_text(self, text):
+    def process_txt_to_event(self, text):
+        system_prompt = load_prompt(
+            "src/txt2event/system_prompts/txt2event.txt"
+        )
+
+        today_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
         messages = [
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": text},
+            {"role": "system", "content": system_prompt},
+            {
+                "role": "user",
+                "content": f"Today datetime: {today_date}\n\n{text}",
+            },
         ]
         response = self.llm.invoke(messages)
         return response

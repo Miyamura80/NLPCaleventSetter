@@ -9,7 +9,6 @@ from src.txt2event import Text2Event
 class TestTxt2Event(TestCaseClass):
     def setUp(self) -> None:
         super().setUp()
-        print(self.config)
         # Add any setup code here
         self.txt2event = Text2Event(self.config)
 
@@ -24,9 +23,21 @@ Code:
 ```"""
 
     @ci_test
-    def test_process_text(self):
-        test_str = "What is the capital of France?"
-        response = self.txt2event.process_text(test_str)
+    def test_process_txt_to_event(self):
+        test_str = """> Hardi:
+Would Wed 4PM work?
+
+> Eito Miyamura ♨️:
+Sounds good! Whats your email?
+
+> Eito Miyamura ♨️:
+And what area of London will you be around?
+
+> Hardi:
+hardi@gatlingx.com
+I am in Shordetich but on Wed I will be coming from Dulwitch by train so near Victoria could work or maybe start 5PM and do near Shorditch
+"""
+        response = self.txt2event.process_txt_to_event(test_str)
         print(response)
         self.assertIsNotNone(response)
 
