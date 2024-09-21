@@ -43,7 +43,7 @@ class Text2Event:
             end_time=extracted_dict["end_time"],
             time_zone=extracted_dict["time_zone"],
             location=extracted_dict.get("location"),  # Make this optional
-            email_invites=extracted_dict.get("emailInvites")  # Make this optional
+            email_invites=extracted_dict.get("emailInvites"),  # Make this optional
         )
         return None
 
