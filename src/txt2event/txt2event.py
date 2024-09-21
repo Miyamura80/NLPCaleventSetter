@@ -20,7 +20,6 @@ class Text2Event:
             session_path_postfix="/txt2event",
         )
 
-
     def extract_event_yaml(self, content: str) -> List[str]:
         pattern = r"```yaml(.*?)```"
         matches = re.findall(pattern, content, re.DOTALL)
@@ -29,7 +28,7 @@ class Text2Event:
     def process_text(self, text):
         messages = [
             {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": text}
+            {"role": "user", "content": text},
         ]
         response = self.llm.invoke(messages)
         return response
