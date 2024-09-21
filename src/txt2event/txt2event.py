@@ -25,27 +25,36 @@ class Text2Event:
         )
         self.service = get_calendar_service()  # Initialize the service
 
-    def run(self, content: str) -> None:
-        response = self.process_txt_llm(content)
-        assert response is not None
+    def run(self, content: str) -> bool:
+        try:
+            response = self.process_txt_llm(content)
+            if response is None:
+                return False
 
-        extracted_dict = self.extract_event_yaml(response.content)
+            extracted_dict = self.extract_event_yaml(response.content)
 
-        # Assertion
-        mandatory_fields = ["summary", "start_time", "end_time", "time_zone"]
-        for field in mandatory_fields:
-            assert field in extracted_dict, AssertionError(f"{field} not in LLM output")
+            # Assertion
+            mandatory_fields = ["summary", "start_time", "end_time", "time_zone"]
+            for field in mandatory_fields:
+                if field not in extracted_dict:
+                    print(f"Error: {field} not in LLM output")
+                    return False
 
-        create_event(
-            service=self.service,  # Pass the service
-            summary=extracted_dict["summary"],
-            start_time=extracted_dict["start_time"],
-            end_time=extracted_dict["end_time"],
-            time_zone=extracted_dict["time_zone"],
-            location=extracted_dict.get("location"),  # Make this optional
-            email_invites=extracted_dict.get("emailInvites"),  # Make this optional
-        )
-        return None
+            event = create_event(
+                service=self.service,  # Pass the service
+                summary=extracted_dict["summary"],
+                start_time=extracted_dict["start_time"],
+                end_time=extracted_dict["end_time"],
+                time_zone=extracted_dict["time_zone"],
+                location=extracted_dict.get("location"),  # Make this optional
+                email_invites=extracted_dict.get("emailInvites"),  # Make this optional
+            )
+
+            return event is not None
+
+        except Exception as e:
+            print(f"Error occurred: {str(e)}")
+            return False
 
     def extract_event_yaml(self, content: str) -> Dict[str, Any]:
 
