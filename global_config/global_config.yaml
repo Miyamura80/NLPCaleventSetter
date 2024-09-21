@@ -1,4 +1,7 @@
-model-name: gpt-4o
+model_name: gpt-4o
+cheap_model_name: gpt-4o-mini
+temperature: 0
+request_timeout: 120
 google_calendar:
   scopes:
     - https://www.googleapis.com/auth/calendar
