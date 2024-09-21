@@ -1,0 +1,3 @@
+[submodule "deps/ChatRouter"]
+	path = deps/ChatRouter
+	url = git@github.com:Miyamura80/ChatRouter.git
