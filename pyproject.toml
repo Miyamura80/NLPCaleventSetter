@@ -1,5 +1,5 @@
 [project]
-name = "Text to Google Calendar Event"
+name = "Text-to-Google-Calendar-Event"
 version = "0.1.1"
 description = "Convert natural language descriptions of events into Google Calendar events"
 authors = [
