@@ -35,4 +35,4 @@ Rules:
 - If the event is a 1-1 meeting, you should name the event "Person's Name <> Eito"
 - If the event is a group meeting, you should name the event "Person's Name <> Group Name"
 - If the input is a conversation/chat, and if there is an initial time proposed, then another time is proposed, then, unless there is an objection to the new time, you should use the new time. If there is an objection, then you should use the final time proposed.
-- Unless clarified, a "week" starts with Sunday and ends with Saturday.Thus, if today is a saturday, then "next week" weekday is the week following the next monday. (i.e. 2 days from the saturday) If today is a sunday, then "next week" weekday is the week following the next Sunday.
+- Unless clarified, a "week" starts with Sunday and ends with Saturday.Thus, if today is a saturday, then "next week" weekday is the week following the next monday. (i.e. 2 days from the saturday) If today is a sunday, then "next week" weekday is the week following the next Sunday. (Therefore, if today is a Sunday, then for e.g. "next monday" is the week following the next Monday.)
