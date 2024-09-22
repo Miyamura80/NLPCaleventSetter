@@ -1,11 +1,11 @@
-# Python-Template
+# Text to Event Tool
 
 <p align="center">
   <img src="media/banner.png" alt="2" width="400">
 </p>
 
 <p align="center">
-<b>Description of the project here. </b>
+<b>Text to Event! Convert natural language descriptions of events into Google Calendar events. </b>
 </p>
 
 <p align="center">
@@ -34,23 +34,47 @@
 --- 
 
 <p align="center">
-  <img src="media/example_gif.gif" alt="2" width="400">
+  <img src="media/demo.gif" alt="2" width="400">
 </p>
 
 
 ## Key features
 
-- Built-in [cursor](cursor.com) native integration, with [`.cursorrules`](.cursorrules). Chat in `CTRL+L` or edit `CTRL+K` will automatically use `.cursorrules` to code in the native coding style of the repo / be a helpful guide to guide you in this repository
-- Key feature 2
-- Key feature 3
+- Convert natural language descriptions of events into Google Calendar events. Chat descriptions, etc.
 
 
 ## Quick Start
 
-- `make all` - runs `main.py`
-- `make lint` - runs `black` linter, an opinionated linter
-- `make test` - runs all tests defined by `TEST_TARGETS = tests/folder1 tests/folder2`
+- Install dependencies:
+  ```
+  rye sync
+  ```
 
+- Run the script:
+  ```
+  rye run python main.py
+  ```
+  - Optional: If you want to use a more convenient shorthand, via the CLI, follow the instructions below:
+    - Get the current `pwd`:  
+      ```
+      pwd
+      ```
+    - Open `.zshrc` or `.bashrc`:
+      ```
+      nano ~/.zshrc
+      ```
+    - Add the following to your `.zshrc` or `.bashrc`:
+      ```
+      alias schedule='cd /path/to/pwd && rye run python main.py'
+      ```
+    - Reload the shell:
+      ```
+      source ~/.zshrc
+      ```
+    - Now, you can use `schedule` to run the script from anywhere in the terminal.
+      ```
+      schedule
+      ```
 
 
 ## Configuration Options
