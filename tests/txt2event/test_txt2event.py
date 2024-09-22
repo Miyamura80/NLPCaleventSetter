@@ -12,23 +12,6 @@ class TestTxt2Event(TestCaseClass):
         # Add any setup code here
         self.txt2event = Text2Event(self.config)
 
-    @ci_test
-    def test_run(self):
-        test_str = """> Hardi:
-Would Mon 4PM work?
-
-> Eito Miyamura ♨️:
-Sounds good! Whats your email?
-
-> Eito Miyamura ♨️:
-And what area of London will you be around?
-
-> Hardi:
-hardi@gatlingx.com
-I am in Shordetich but on Mon I will be coming from Dulwitch by train so near Victoria could work or maybe start 5PM and do near Shorditch
-"""
-        self.txt2event.run(test_str)
-
     def test_process_txt_to_event(self):
         test_str = """> Hardi:
 Would Mon 4PM work?

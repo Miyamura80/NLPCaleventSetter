@@ -28,6 +28,7 @@ build-backend = "hatchling.build"
 [tool.rye]
 managed = true
 dev-dependencies = []
+src = ["src", "deps"]
 
 [tool.hatch.metadata]
 allow-direct-references = true
