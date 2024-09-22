@@ -28,7 +28,15 @@ build-backend = "hatchling.build"
 [tool.rye]
 managed = true
 dev-dependencies = []
-src = ["src", "deps"]
+
+[tool.rye.scripts]
+test = "pytest"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  ".",
+  "src"
+]
 
 [tool.hatch.metadata]
 allow-direct-references = true
