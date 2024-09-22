@@ -1,5 +1,6 @@
 from .service import get_calendar_service
 from datetime import datetime
+from termcolor import colored
 
 
 def create_event(
@@ -29,5 +30,5 @@ def create_event(
         .insert(calendarId=calendar_id, body=event, sendUpdates="all")
         .execute()
     )
-    print(f'Event created: {event.get("htmlLink")}')
+    print(f'Event created: {colored(event.get("htmlLink"), "green", attrs=["underline"])}')
     return event

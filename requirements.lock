@@ -167,6 +167,8 @@ sqlalchemy==2.0.35
 tenacity==8.5.0
     # via langchain
     # via langchain-core
+termcolor==2.4.0
+    # via python-template
 tiktoken==0.7.0
     # via langchain-openai
 tqdm==4.66.5
