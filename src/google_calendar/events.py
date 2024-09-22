@@ -3,6 +3,7 @@ from datetime import datetime
 from termcolor import colored
 import webbrowser
 
+
 def create_event(
     service, summary, start_time, end_time, time_zone, location=None, email_invites=None
 ):
