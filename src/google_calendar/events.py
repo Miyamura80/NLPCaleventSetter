@@ -1,7 +1,7 @@
 from .service import get_calendar_service
 from datetime import datetime
 from termcolor import colored
-
+import webbrowser
 
 def create_event(
     service, summary, start_time, end_time, time_zone, location=None, email_invites=None
@@ -30,7 +30,8 @@ def create_event(
         .insert(calendarId=calendar_id, body=event, sendUpdates="all")
         .execute()
     )
-    print(
-        f'Event created: \n{colored(event.get("htmlLink"), "green", attrs=["underline"])}'
-    )
+
+    html_link = event.get("htmlLink")
+    print(f'Event created: \n{colored(html_link, "green", attrs=["underline"])}')
+    webbrowser.open(html_link)
     return event
