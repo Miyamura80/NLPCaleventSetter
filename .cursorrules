@@ -84,3 +84,13 @@ Few things to note:
 - Include a `setUp` method in each test file
 - Use `self.config` for test configuration (loaded from `tests/config.yaml`)
 - Prefix tests with `test_` and use `@ci_test` decorator for CI tests
+
+
+## Stylistic preferences
+
+- Use snake case for all function, file, and directory names
+- Use camel case for class names
+- Use all lowercase for variable names
+- Use all uppercase for constants
+- Use 4 spaces for indentation
+- Use double quotes for strings
