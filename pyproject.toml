@@ -35,7 +35,8 @@ test = "pytest"
 [tool.pytest.ini_options]
 pythonpath = [
   ".",
-  "src"
+  "src",
+  "deps"  # Add this line
 ]
 
 [tool.hatch.metadata]

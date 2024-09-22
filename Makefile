@@ -6,7 +6,6 @@ BLUE=\033[0;34m
 RESET=\033[0m
 
 PYTHON=rye run python
-TEST=rye run pytest
 PROJECT_ROOT=.
 
 ########################################################
@@ -76,6 +75,7 @@ all: update_python_dep setup_githooks
 ########################################################
 
 TEST_TARGETS = tests/txt2event
+TEST=rye run pytest
 
 # Tests
 test: check_rye

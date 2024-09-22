@@ -24,7 +24,7 @@ anyio==4.6.0
 attrs==24.2.0
     # via aiohttp
 black==24.8.0
-    # via python-template
+    # via text-to-google-calendar-event
 cachetools==5.5.0
     # via google-auth
 certifi==2024.8.30
@@ -44,7 +44,7 @@ frozenlist==1.4.1
 google-api-core==2.20.0
     # via google-api-python-client
 google-api-python-client==2.146.0
-    # via python-template
+    # via text-to-google-calendar-event
 google-auth==2.35.0
     # via google-api-core
     # via google-api-python-client
@@ -52,9 +52,9 @@ google-auth==2.35.0
     # via google-auth-oauthlib
 google-auth-httplib2==0.2.0
     # via google-api-python-client
-    # via python-template
+    # via text-to-google-calendar-event
 google-auth-oauthlib==1.2.1
-    # via python-template
+    # via text-to-google-calendar-event
 googleapis-common-protos==1.65.0
     # via google-api-core
 h11==0.14.0
@@ -68,7 +68,7 @@ httpx==0.27.2
     # via langsmith
     # via openai
 human-id==0.2.0
-    # via python-template
+    # via text-to-google-calendar-event
 idna==3.10
     # via anyio
     # via httpx
@@ -83,13 +83,13 @@ jsonpatch==1.33
 jsonpointer==3.0.0
     # via jsonpatch
 langchain==0.3.0
-    # via python-template
+    # via text-to-google-calendar-event
 langchain-core==0.3.5
     # via langchain
     # via langchain-openai
     # via langchain-text-splitters
 langchain-openai==0.2.0
-    # via python-template
+    # via text-to-google-calendar-event
 langchain-text-splitters==0.3.0
     # via langchain
 langsmith==0.1.125
@@ -139,13 +139,13 @@ pydantic-core==2.23.4
 pyparsing==3.1.4
     # via httplib2
 pytest==8.3.3
-    # via python-template
+    # via text-to-google-calendar-event
 python-dotenv==1.0.1
-    # via python-template
+    # via text-to-google-calendar-event
 pyyaml==6.0.2
     # via langchain
     # via langchain-core
-    # via python-template
+    # via text-to-google-calendar-event
 regex==2024.9.11
     # via tiktoken
 requests==2.32.3
@@ -168,7 +168,7 @@ tenacity==8.5.0
     # via langchain
     # via langchain-core
 termcolor==2.4.0
-    # via python-template
+    # via text-to-google-calendar-event
 tiktoken==0.7.0
     # via langchain-openai
 tqdm==4.66.5
