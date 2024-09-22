@@ -25,7 +25,7 @@ And what area of London will you be around?
 
 > Hardi:
 hardi@gatlingx.com
-I am in Shordetich but on Wed I will be coming from Dulwitch by train so near Victoria could work or maybe start 5PM and do near Shorditch
+I am in Shordetich but on Mon I will be coming from Dulwitch by train so near Victoria could work or maybe start 5PM and do near Shorditch
 """
         self.txt2event.run(test_str)
 
@@ -41,7 +41,7 @@ And what area of London will you be around?
 
 > Hardi:
 hardi@gatlingx.com
-I am in Shordetich but on Wed I will be coming from Dulwitch by train so near Victoria could work or maybe start 5PM and do near Shorditch
+I am in Shordetich but on Mon I will be coming from Dulwitch by train so near Victoria could work or maybe start 5PM and do near Shorditch
 """
         response = self.txt2event.process_txt_llm(test_str)
         print(response)

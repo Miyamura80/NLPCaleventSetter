@@ -2,6 +2,7 @@ import datetime
 import re
 from typing import Any, Dict, List
 import yaml
+from termcolor import colored
 
 from deps.ChatRouter.utils import ChatRouter, load_prompt
 from global_config.global_config import global_config
@@ -62,6 +63,8 @@ class Text2Event:
         matches = re.findall(pattern, content, re.DOTALL)
         yaml_content = matches[0].strip() if matches else ""
 
+        print(colored(yaml_content, "blue"))
+
         try:
             parsed_dict = yaml.safe_load(yaml_content)
             return parsed_dict
@@ -72,13 +75,15 @@ class Text2Event:
     def process_txt_llm(self, text):
         system_prompt = load_prompt("src/txt2event/system_prompts/txt2event.txt")
 
-        today_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        now = datetime.datetime.now()
+        today_date = now.strftime("%Y-%m-%d %H:%M:%S")
+        day_of_week = now.strftime("%A")
 
         messages = [
             {"role": "system", "content": system_prompt},
             {
                 "role": "user",
-                "content": f"Today datetime: {today_date}\n\n{text}",
+                "content": f"Today datetime: {today_date}\n\nDay of the week: {day_of_week}\n\n{text}",
             },
         ]
         response = self.llm.invoke(messages)
