@@ -30,5 +30,7 @@ def create_event(
         .insert(calendarId=calendar_id, body=event, sendUpdates="all")
         .execute()
     )
-    print(f'Event created: {colored(event.get("htmlLink"), "green", attrs=["underline"])}')
+    print(
+        f'Event created: \n{colored(event.get("htmlLink"), "green", attrs=["underline"])}'
+    )
     return event

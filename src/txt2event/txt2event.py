@@ -77,6 +77,7 @@ class Text2Event:
 
         now = datetime.datetime.now()
         today_date = now.strftime("%Y-%m-%d %H:%M:%S")
+        # This is needed, because the LLM is not aware of the current day of the week
         day_of_week = now.strftime("%A")
 
         messages = [
