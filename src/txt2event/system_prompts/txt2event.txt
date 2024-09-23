@@ -27,7 +27,12 @@ emailInvites:
 Rules:
 - You should only respond in YAML format as described above.
 - If the end time is not specified, you should set it to 1 hour after the start time.
-- If the time zone is not specified, you should set it to "Europe/London".
+- If the time zone is not specified, you should set it to "Europe/London". Some helpful information:
+  - London: UTC+0
+  - Paris: UTC+1
+  - New York: UTC-4 (ET/EST/EDT)
+  - Tokyo: UTC+9
+  - San Francisco: UTC-7 (PDT)
 - The times should be in the format "YYYY-MM-DDTHH:MM:SS".
 - Ensure the response can be parsed by Python `yaml.safe_load`
 - If the user does not specify any email invites, you should not include the emailInvites field in the response.
